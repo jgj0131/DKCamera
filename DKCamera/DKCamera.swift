@@ -1149,22 +1149,20 @@ public extension CMAcceleration {
 
 public extension Bundle {
     
-    class func cameraBundle() -> Bundle? {
-        let assetPath = Bundle(for: DKDefaultCameraResource.self).resourcePath!
-        return Bundle(path: (assetPath as NSString).appendingPathComponent("DKCameraResource.bundle"))
+    class func cameraBundle() -> Bundle {
+//        let assetPath = Bundle(for: DKDefaultCameraResource.self).resourcePath!
+//        return Bundle(path: (assetPath as NSString).appendingPathComponent("DKCameraResource.bundle"))
+        return Bundle.module
     }
-    
 }
 
 open class DKDefaultCameraResource: DKCameraResource {
     
     open func imageForResource(_ name: String) -> UIImage {
-        if let bundle = Bundle.cameraBundle(), let imagePath = bundle.path(forResource: name, ofType: "png", inDirectory: "Images") {
-            let image = UIImage(contentsOfFile: imagePath)
-            return image ?? UIImage()
-        } else {
-            return UIImage()
-        }
+        let bundle = Bundle.cameraBundle()
+        let imagePath = bundle.path(forResource: name, ofType: "png", inDirectory: "Images")
+        let image = UIImage(contentsOfFile: imagePath!)
+        return image!
     }
     
      public func cameraCancelImage() -> UIImage {
