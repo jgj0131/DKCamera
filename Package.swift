@@ -16,7 +16,7 @@ let package = Package(
         .target(
             name: "DKCamera",
             dependencies: [],
-            path: "DKCamera"
+            path: "Sources"
         )
     ]
 )
