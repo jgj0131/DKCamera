@@ -1165,8 +1165,8 @@ open class DKDefaultCameraResource: DKCameraResource {
 //    }
     
      public func cameraCancelImage() -> UIImage {
-         if #available(iOS 13.0, *) {
-             guard let image = UIImage(systemName: "xmark") else { return UIImage() }
+         if #available(iOS 14.0, *) {
+             guard let image = UIImage(systemName: "xmark")?.withTintColor(.white, renderingMode: .alwaysOriginal) else { return UIImage() }
              return image
          } else {
              return UIImage()
@@ -1174,8 +1174,8 @@ open class DKDefaultCameraResource: DKCameraResource {
     }
     
      public func cameraFlashOnImage() -> UIImage {
-         if #available(iOS 13.0, *) {
-             guard let image =  UIImage(systemName: "bolt.fill") else { return UIImage() }
+         if #available(iOS 14.0, *) {
+             guard let image =  UIImage(systemName: "bolt.fill")?.withTintColor(.white, renderingMode: .alwaysOriginal) else { return UIImage() }
              return image
          } else {
              return UIImage()
@@ -1183,8 +1183,8 @@ open class DKDefaultCameraResource: DKCameraResource {
     }
     
      public func cameraFlashAutoImage() -> UIImage {
-         if #available(iOS 13.0, *) {
-             guard let image = UIImage(systemName: "bolt.badge.a.fill") else { return UIImage() }
+         if #available(iOS 14.0, *) {
+             guard let image = UIImage(systemName: "bolt.badge.a.fill")?.withTintColor(.white, renderingMode: .alwaysOriginal) else { return UIImage() }
              return image
          } else {
              return UIImage()
@@ -1192,8 +1192,8 @@ open class DKDefaultCameraResource: DKCameraResource {
     }
     
      public func cameraFlashOffImage() -> UIImage {
-         if #available(iOS 13.0, *) {
-             guard let image = UIImage(systemName: "bolt.slash") else { return UIImage() }
+         if #available(iOS 14.0, *) {
+             guard let image = UIImage(systemName: "bolt.slash")?.withTintColor(.white, renderingMode: .alwaysOriginal) else { return UIImage() }
              return image
          } else {
              return UIImage()
@@ -1201,8 +1201,8 @@ open class DKDefaultCameraResource: DKCameraResource {
     }
     
      public func cameraSwitchImage() -> UIImage {
-         if #available(iOS 13.0, *) {
-             guard let image = UIImage(systemName: "arrow.triangle.2.circlepath.camera") else { return UIImage() }
+         if #available(iOS 14.0, *) {
+             guard let image = UIImage(systemName: "arrow.triangle.2.circlepath.camera")?.withTintColor(.white, renderingMode: .alwaysOriginal) else { return UIImage() }
              return image
          } else {
              return UIImage()
