@@ -1,4 +1,4 @@
-// swift-tools-version:5.0
+// swift-tools-version:5.5
 
 import PackageDescription
 
@@ -16,7 +16,9 @@ let package = Package(
         .target(
             name: "DKCamera",
             dependencies: [],
-            path: "DKCamera"
+            path: "Sources",
+            resources: [.process("DKCameraResource")]
         )
-    ]
+    ],
+    swiftLanguageVersions: [.v5]
 )
