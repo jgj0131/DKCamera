@@ -1165,28 +1165,48 @@ open class DKDefaultCameraResource: DKCameraResource {
 //    }
     
      public func cameraCancelImage() -> UIImage {
-         guard let image = UIImage(systemName: "xmark") else { return UIImage() }
-         return image
+         if #available(iOS 13.0, *) {
+             guard let image = UIImage(systemName: "xmark") else { return UIImage() }
+             return image
+         } else {
+             return UIImage()
+         }
     }
     
      public func cameraFlashOnImage() -> UIImage {
-         guard let image =  UIImage(systemName: "bolt.fill") else { return UIImage() }
-         return image
+         if #available(iOS 13.0, *) {
+             guard let image =  UIImage(systemName: "bolt.fill") else { return UIImage() }
+             return image
+         } else {
+             return UIImage()
+         }
     }
     
      public func cameraFlashAutoImage() -> UIImage {
-         guard let image = UIImage(systemName: "bolt.badge.a.fill") else { return UIImage() }
-         return image
+         if #available(iOS 13.0, *) {
+             guard let image = UIImage(systemName: "bolt.badge.a.fill") else { return UIImage() }
+             return image
+         } else {
+             return UIImage()
+         }
     }
     
      public func cameraFlashOffImage() -> UIImage {
-         guard let image = UIImage(systemName: "bolt.slash") else { return UIImage() }
-         return image
+         if #available(iOS 13.0, *) {
+             guard let image = UIImage(systemName: "bolt.slash") else { return UIImage() }
+             return image
+         } else {
+             return UIImage()
+         }
     }
     
      public func cameraSwitchImage() -> UIImage {
-         guard let image = UIImage(systemName: "arrow.triangle.2.circlepath.camera") else { return UIImage() }
-         return image
+         if #available(iOS 13.0, *) {
+             guard let image = UIImage(systemName: "arrow.triangle.2.circlepath.camera") else { return UIImage() }
+             return image
+         } else {
+             return UIImage()
+         }
     }
 }
 
