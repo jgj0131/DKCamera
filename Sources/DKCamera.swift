@@ -1150,42 +1150,38 @@ public extension CMAcceleration {
 public extension Bundle {
     
     class func cameraBundle() -> Bundle? {
-//        #if SWIFT_PACKAGE
-//            return Bundle.main
-//        #else
-            let assetPath = Bundle(for: DKDefaultCameraResource.self).resourcePath!
-            return Bundle(path: (assetPath as NSString).appendingPathComponent("DKCameraResource.bundle"))
-//        #endif
+        let assetPath = Bundle(for: DKDefaultCameraResource.self).resourcePath!
+        return Bundle(path: (assetPath as NSString).appendingPathComponent("DKCameraResource.bundle"))
     }
 }
 
 open class DKDefaultCameraResource: DKCameraResource {
     
-    open func imageForResource(_ name: String) -> UIImage {
-        guard let bundle = Bundle.cameraBundle() else { return UIImage() }
-        guard let imagePath = bundle.path(forResource: name, ofType: "png", inDirectory: "Images") else { return UIImage() }
-        guard let image = UIImage(contentsOfFile: imagePath) else { return UIImage() }
-        return image
-    }
+//    open func imageForResource(_ name: String) -> UIImage {
+//        guard let bundle = Bundle.cameraBundle() else { return UIImage() }
+//        guard let imagePath = bundle.path(forResource: name, ofType: "png", inDirectory: "Images") else { return UIImage() }
+//        guard let image = UIImage(contentsOfFile: imagePath) else { return UIImage() }
+//        return image
+//    }
     
      public func cameraCancelImage() -> UIImage {
-        return imageForResource("camera_cancel")
+         return UIImage(systemName: "xmark")
     }
     
      public func cameraFlashOnImage() -> UIImage {
-        return imageForResource("camera_flash_on")
+        return UIImage(systemName: "bolt.fill")
     }
     
      public func cameraFlashAutoImage() -> UIImage {
-        return imageForResource("camera_flash_auto")
+        return UIImage(systemName: "bolt.badge.a.fill")
     }
     
      public func cameraFlashOffImage() -> UIImage {
-        return imageForResource("camera_flash_off")
+        return UIImage(systemName: "bolt.slash")
     }
     
      public func cameraSwitchImage() -> UIImage {
-        return imageForResource("camera_switch")
+        return UIImage(systemName: "arrow.triangle.2.circlepath.camera")
     }
     
 }
