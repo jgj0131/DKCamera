@@ -1165,24 +1165,28 @@ open class DKDefaultCameraResource: DKCameraResource {
 //    }
     
      public func cameraCancelImage() -> UIImage {
-         return UIImage(systemName: "xmark")
+         guard let image = UIImage(systemName: "xmark") else { return UIImage() }
+         return image
     }
     
      public func cameraFlashOnImage() -> UIImage {
-        return UIImage(systemName: "bolt.fill")
+         guard let image =  UIImage(systemName: "bolt.fill") else { return UIImage() }
+         return image
     }
     
      public func cameraFlashAutoImage() -> UIImage {
-        return UIImage(systemName: "bolt.badge.a.fill")
+         guard let image = UIImage(systemName: "bolt.badge.a.fill") else { return UIImage() }
+         return image
     }
     
      public func cameraFlashOffImage() -> UIImage {
-        return UIImage(systemName: "bolt.slash")
+         guard let image = UIImage(systemName: "bolt.slash") else { return UIImage() }
+         return image
     }
     
      public func cameraSwitchImage() -> UIImage {
-        return UIImage(systemName: "arrow.triangle.2.circlepath.camera")
+         guard let image = UIImage(systemName: "arrow.triangle.2.circlepath.camera") else { return UIImage() }
+         return image
     }
-    
 }
 
